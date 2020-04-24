@@ -1,0 +1,17 @@
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the catAndMouse function below.
+def catAndMouse(x, y, z):
+    #q = int(input().strip())
+    for i in range(q):
+        #x, y, z = input().strip().split(' ')
+        x, y, z = [int(x), int(y), int(z)]
+        absCatA, absCatB = abs(x-z), abs(y-z)
+        if absCatA == absCatB:
+            return "Mouse C"
+        else:
+            return ("Cat A" if absCatB > absCatA else "Cat B")
