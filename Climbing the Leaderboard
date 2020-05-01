@@ -1,0 +1,22 @@
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the climbingLeaderboard function below.
+def climbingLeaderboard(scores, alice):
+    results = []
+    # Unique values from scores, since duplicate scores will have same rank
+    leaderboard = sorted(set(scores), reverse = True)
+    # Use this variable to track the index within the leaderboard later
+    l = len(leaderboard)
+    # loop through each of the alice score
+    for i in alice:
+        # If alice csore is >= to the score at the index of the end of the leaderboard           # then subtract 1 from the index value to check the next score up
+        # If the score is less than the next score up, the index will be added to the            # results.
+        while (l > 0) and (i >= leaderboard[l-1]):
+            l -= 1
+            # We add 1 to the appended value to account for 0-indexing
+        results.append(l+1)
+    return results
