@@ -1,0 +1,22 @@
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the appendAndDelete function below.
+def appendAndDelete(s, t, k):
+    commonlength = 0
+    if(len(s)+len(t) < k):
+        return "Yes"
+    else:
+        # 1st we will find the common length between both the strings
+        for i in range(0, min(len(s), len(t)), 1):
+            if(s[i] == t[i]):
+                commonlength += 1
+            else:
+                break
+        if((k - len(s) - len(t) + 2 * commonlength) % 2 == 0):
+            return "Yes"
+        else:
+            return "No"
