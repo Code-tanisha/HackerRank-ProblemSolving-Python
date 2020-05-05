@@ -1,0 +1,22 @@
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the balancedSums function below.
+# sum of array  = x(left part) + y + x(right part)
+# means sum = 2x + y
+# 2x = sum - y(means 1st we will find the sum of whole array and then we will consider # # each element of array as y one by one)
+# ex - [1, 2, 3, 4] here sum = 10, fistly x will be 0 and y will be one then x = 1 and y = 2 then x = 1+2 and y will be 3 and so on
+def balancedSums(arr):
+    x = 0
+    sum = 0
+    #n = len(arr)
+    for i in range(0, len(arr)):
+        sum += arr[i]
+    for j in range(0, len(arr)):
+        if(2*x == sum-arr[j]):
+            return 'YES'
+        x = x+arr[j]
+    return 'NO'
