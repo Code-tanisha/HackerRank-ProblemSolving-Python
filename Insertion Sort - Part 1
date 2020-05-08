@@ -1,0 +1,23 @@
+def insertionSort1(n, arr):    
+    flag=len(arr)-1
+    num=arr[flag]
+    while flag:
+        if num<arr[flag-1]:
+            arr[flag]=arr[flag-1]
+            flag-=1
+            # Here we have converted a list into string function.We have used map() to               # convert each item in the list to a string, and then join them.
+            print(' '.join(map(str,arr)))
+        else:
+            break
+    arr[flag]=num
+    print(' '.join(map(str,arr)))
+
+
+    
+
+if __name__ == '__main__':
+    n = int(raw_input())
+
+    arr = map(int, raw_input().rstrip().split())
+
+    insertionSort1(n, arr)
